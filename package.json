@@ -1,0 +1,9 @@
+{
+  "name": "wcag-checker",
+  "private": true,
+  "scripts": {
+    "install:all": "npm --prefix server install && npm --prefix client install && npx --prefix server playwright install chromium",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev"
+  }
+}

@@ -1,0 +1,65 @@
+:root {
+  --ink: #12202f; --muted: #4a5a6b; --bg: #eef2f6; --surface: #fff; --line: #c9d3de;
+  --pass: #0b6b42; --pass-bg: #e3f4ec; --fail: #a4261b; --fail-bg: #fdecea;
+  --focus: #1346c9;
+  --critical: #a4261b; --serious: #b4540a; --moderate: #7a5c00; --minor: #3d5a80;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink);
+  font: 18px/1.55 'Atkinson Hyperlegible', system-ui, sans-serif; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.skip { position: absolute; left: -999px; background: var(--ink); color: #fff; padding: .5rem 1rem; }
+.skip:focus { left: 1rem; top: 1rem; z-index: 10; }
+
+.masthead { background: var(--ink); color: #fff; padding: 3rem 1.25rem 2.5rem; }
+.masthead > * { max-width: 760px; margin-inline: auto; }
+.masthead h1 { font-size: 2.6rem; margin: 0 0 .25rem; letter-spacing: -.02em; }
+.masthead p { margin: 0 auto 1.5rem; color: #d5dee8; }
+.scan-form label { display: block; font-weight: 700; margin-bottom: .35rem; }
+.row { display: flex; gap: .5rem; flex-wrap: wrap; }
+input[type=text] { flex: 1 1 280px; padding: .75rem 1rem; font: inherit; border: 2px solid #fff; border-radius: 6px; }
+button { font: inherit; cursor: pointer; border-radius: 6px; }
+.scan-form button { padding: .75rem 1.5rem; font-weight: 700; background: #ffd23f; color: var(--ink); border: 2px solid #ffd23f; }
+.scan-form button:disabled { opacity: .7; cursor: progress; }
+.hint { font-size: .9rem; margin-top: .5rem !important; color: #d5dee8; }
+.masthead :focus-visible { outline-color: #ffd23f; }
+
+main { max-width: 760px; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+.status { min-height: 1.5rem; color: var(--muted); }
+.status.error { color: var(--fail); font-weight: 700; }
+
+.verdict { border-left: 10px solid; border-radius: 6px; padding: 1.5rem; background: var(--surface); }
+.verdict.pass { border-color: var(--pass); background: var(--pass-bg); }
+.verdict.fail { border-color: var(--fail); background: var(--fail-bg); }
+.verdict h2 { margin: 0; font-size: 1.9rem; line-height: 1.2; }
+.verdict .url { margin: .25rem 0 1rem; color: var(--muted); word-break: break-all; }
+.counts { display: flex; gap: 2rem; flex-wrap: wrap; margin: 0 0 1rem; }
+.counts dt { font-size: .9rem; color: var(--muted); }
+.counts dd { margin: 0; font-size: 2.4rem; font-weight: 700; line-height: 1.1; }
+.caveat { margin: 0; font-size: .9rem; color: var(--muted); }
+
+.filters { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.filters button { padding: .4rem .9rem; background: var(--surface); border: 2px solid var(--line); text-transform: capitalize; }
+.filters button[aria-pressed=true] { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+.violations { list-style: none; padding: 0; margin: 0; display: grid; gap: .6rem; }
+.violations > li { background: var(--surface); border: 1px solid var(--line); border-left: 8px solid; border-radius: 6px; }
+.sev-critical { border-left-color: var(--critical) !important; }
+.sev-serious  { border-left-color: var(--serious) !important; }
+.sev-moderate { border-left-color: var(--moderate) !important; }
+.sev-minor    { border-left-color: var(--minor) !important; }
+details { padding: .8rem 1rem; }
+summary { cursor: pointer; display: grid; gap: .15rem; }
+.badge { font-weight: 700; text-transform: capitalize; font-size: .85rem; }
+.sev-critical .badge { color: var(--critical); } .sev-serious .badge { color: var(--serious); }
+.sev-moderate .badge { color: var(--moderate); } .sev-minor .badge { color: var(--minor); }
+.title { font-weight: 700; }
+.meta { font-size: .9rem; color: var(--muted); }
+.nodes { padding-left: 1.2rem; }
+code { display: block; overflow-x: auto; background: var(--bg); padding: .4rem .6rem; border-radius: 4px; font-size: .8rem; white-space: pre-wrap; word-break: break-all; }
+
+.history { margin-top: 3rem; }
+table { width: 100%; border-collapse: collapse; font-size: .9rem; display: block; overflow-x: auto; }
+th, td { text-align: left; padding: .5rem; border-bottom: 1px solid var(--line); }
+
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; animation: none !important; transition: none !important; } }
