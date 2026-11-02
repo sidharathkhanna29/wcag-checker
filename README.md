@@ -82,5 +82,5 @@ Automated tools detect only a portion of accessibility issues. A result of
 screen reader testing is still required. Only the landing page is scanned.
 
 ## Author
-Sidharath Khanana(https://sidharathkhanna29.github.io/)  [LinkedIn](https://www.linkedin.com/in/sidharathkhanna29/) | [GitHub](https://github.com/sidharathkhanna29)
+[Sidharath Khanana](https://sidharathkhanna29.github.io/)  [LinkedIn](https://www.linkedin.com/in/sidharathkhanna29/) | [GitHub](https://github.com/sidharathkhanna29)
 
